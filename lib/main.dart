@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:ui_design/views/login.dart';
 import 'package:ui_design/views/stacked_icon.dart';
+import 'package:get_it/get_it.dart';
+import 'package:ui_design/services/purchase_service.dart';
 
 import 'views/shop_name.dart';
 
-void main() => runApp(MyApp());
+void setupLocator() {
+  GetIt.I.registerLazySingleton(() => PurchaseService());
+
+}
+
+void main() {
+  setupLocator();
+runApp(MyApp());
+} 
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.

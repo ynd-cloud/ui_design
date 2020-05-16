@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ui_design/views/product_popular_list.dart';
 import 'package:ui_design/views/purchase_list.dart';
 import 'package:ui_design/views/receive_list.dart';
 import 'package:ui_design/views/report_list.dart';
@@ -73,15 +74,15 @@ class MainContent extends StatelessWidget {
                 children: <Widget>[
                   new Expanded(
                       child: GestureDetector(
-                        onTap: () {
-                                  Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => SaleListPage()));
-                                },
-                                              child: Padding(
-                    padding: const EdgeInsets.only(right: 5.0),
-                    child: new Container(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SaleListPage()));
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.only(right: 5.0),
+                      child: new Container(
                         height: 100.0,
                         decoration: new BoxDecoration(
                             borderRadius: new BorderRadius.circular(5.0),
@@ -97,9 +98,9 @@ class MainContent extends StatelessWidget {
                                 style: new TextStyle(color: Colors.white))
                           ],
                         ),
+                      ),
                     ),
-                  ),
-                      )),
+                  )),
                   new Expanded(
                       child: new Container(
                     height: 100.0,
@@ -273,10 +274,18 @@ class MainContent extends StatelessWidget {
                       child: new Text("สินค้ายอดนิยม",
                           style: new TextStyle(fontSize: 18.0))),
                   new Expanded(
-                      child: new Text(
-                    "View All",
-                    style: new TextStyle(color: Color(0XFF2BD093)),
-                    textAlign: TextAlign.end,
+                      child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ProductPopularPage()));
+                    },
+                    child: new Text(
+                      "View All",
+                      style: new TextStyle(color: Color(0XFF2BD093)),
+                      textAlign: TextAlign.end,
+                    ),
                   ))
                 ],
               ),
