@@ -1,3 +1,7 @@
+class ProductFilter {
+  Set<String> allBrands;
+  Set<String> selectedBrands;
+}
 
 class ProductPopular {
   String cat;
