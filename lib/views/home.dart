@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:ui_design/views/product_list.dart';
 import 'package:ui_design/views/product_popular_list.dart';
 import 'package:ui_design/views/purchase_list.dart';
 import 'package:ui_design/views/receive_list.dart';
 import 'package:ui_design/views/report_list.dart';
 import 'package:ui_design/views/sale_list.dart';
-import 'package:ui_design/views/store_list.dart';
+
 
 class HomePage extends StatefulWidget {
   @override
@@ -188,7 +189,7 @@ class MainContent extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => StoreListPage()));
+                              builder: (context) => ProductListPage()));
                     },
                     child: new Container(
                       height: 100.0,

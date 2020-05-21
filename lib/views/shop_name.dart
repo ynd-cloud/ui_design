@@ -8,7 +8,7 @@ class ShopName extends StatelessWidget {
             children: <Widget>[
               Padding(
                 padding: const EdgeInsets.only(top: 8, bottom: 60),
-                child: Text("Small Shop", style: TextStyle(fontSize: 30)),
+                child: Text("New Shop", style: TextStyle(fontSize: 30)),
               )
             ],
     );

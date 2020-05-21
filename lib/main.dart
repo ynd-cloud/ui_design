@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ui_design/services/product_service.dart';
 import 'package:ui_design/views/login.dart';
 import 'package:ui_design/views/stacked_icon.dart';
 import 'package:get_it/get_it.dart';
@@ -8,13 +9,13 @@ import 'views/shop_name.dart';
 
 void setupLocator() {
   GetIt.I.registerLazySingleton(() => PurchaseService());
-
+  GetIt.I.registerLazySingleton(() => ProductService());
 }
 
 void main() {
   setupLocator();
-runApp(MyApp());
-} 
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -48,7 +49,7 @@ class MyHomePage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           StackedIcon(),
-            ShopName(),
+          ShopName(),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
