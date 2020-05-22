@@ -18,6 +18,7 @@ class PurchaseService {
   Future<APIResponse<List<PurchaseForListing>>> getPurchasesList() {
     return http.get(API + '/' + _apiName, headers: headers).then((data) {
       if (data.statusCode == 200) {
+        print(data);
         final jsonData = json.decode(data.body);
         final purchases = <PurchaseForListing>[];
         for (var item in jsonData) {

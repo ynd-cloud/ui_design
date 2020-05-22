@@ -18,7 +18,7 @@ class _ProductListState extends State<ProductListPage> {
   bool _isLoading = false;
 
   String formatDateTime(DateTime dateTime) {
-    return '${dateTime.day}/${dateTime.month}/${dateTime.year}';
+    return '${dateTime.day}/${dateTime.month}/${dateTime.year} ${dateTime.hour}:${dateTime.minute}';
   }
 
   @override
@@ -102,11 +102,13 @@ class _ProductListState extends State<ProductListPage> {
                   ),
                   child: ListTile(
                     title: Text(
-                      _apiResponse.data[index].id.toString(),
+                      _apiResponse.data[index].code.toString(),
                       style: TextStyle(color: Theme.of(context).primaryColor),
                     ),
                     subtitle: Text(
                         'แก้ไขล่าสุดวันที่ ${formatDateTime(_apiResponse.data[index].updatedOn ?? _apiResponse.data[index].createdOn)}'),
+                    trailing: Text('trailing'),
+                    //https://api.flutter.dev/flutter/material/ListTile-class.html for example
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
                           builder: (_) => ProductModify(

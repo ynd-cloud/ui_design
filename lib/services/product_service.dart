@@ -12,17 +12,18 @@ class ProductService {
   static const API = 'https://yndapi.azurewebsites.net/api';
   static const _apiName = 'Products';
   static const headers = {
-    'accept': 'text/plain',
-    'Content-Type': 'application/json'
+    //'accept': 'text/plain',
+    //'Content-Type': 'application/json'
+    'accept': 'application/json',
   
   }; 
 
   Future<APIResponse<List<ProductForListing>>> getProductsList(){
-    return http.get(API + '/' + _apiName , headers: headers)
-    .then((data){
+    return http.get(API + '/' + _apiName , headers: headers).then((data){
       if (data.statusCode == 200) {
         final jsonData = json.decode(data.body);
         final products = <ProductForListing>[];
+        print(data.body);
         for (var item in jsonData) {
           products.add(ProductForListing.fromJson(item));
         }

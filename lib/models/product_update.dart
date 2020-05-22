@@ -1,5 +1,7 @@
 
 
+import 'package:flutter/foundation.dart';
+
 class ProductManipulation {
   String code;
   String name;
@@ -37,8 +39,8 @@ class ProductManipulation {
 
   ProductManipulation(
       {
-      this.code,
-      this.name,
+      @required this.code,
+      @required this.name,
       this.shortName,
       this.size,
       this.isEcommerge,

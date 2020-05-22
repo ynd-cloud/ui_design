@@ -1,5 +1,3 @@
-
-
 class ProductForListing {
   int id;
   String code;
@@ -72,79 +70,42 @@ class ProductForListing {
       this.updatedByUserId,
       this.updatedByUser});
 
-  ProductForListing.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
-    code = json['code'];
-    name = json['name'];
-    shortName = json['shortName'];
-    size = json['size'];
-    isEcommerge = json['isEcommerge'];
-    productCategoryId = json['productCategoryId'];
-    productCategory = json['productCategory'];
-    productTypeId = json['productTypeId'];
-    productType = json['productType'];
-    productGroupId = json['productGroupId'];
-    productGroup = json['productGroup'];
-    clientId = json['clientId'];
-    client = json['client'];
-    uomId = json['uomId'];
-    uom = json['uom'];
-    controlExpireDate = json['controlExpireDate'];
-    description = json['description'];
-    unitPrice = json['unitPrice'];
-    unitPriceCurrencyId = json['unitPriceCurrencyId'];
-    unitPriceCurrency = json['unitPriceCurrency'];
-    standardPack = json['standardPack'];
-    standardPackUomId = json['standardPackUomId'];
-    standardPackUom = json['standardPackUom'];
-    picture = json['picture'];
-    pictureContentType = json['pictureContentType'];
-    mfg = json['mfg'];
-    isActive = json['isActive'];
-    createdOn = json['createdOn'];
-    createdByUserId = json['createdByUserId'];
-    createdByUser = json['createdByUser'];
-    updatedOn = json['updatedOn'];
-    updatedByUserId = json['updatedByUserId'];
-    updatedByUser = json['updatedByUser'];
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['code'] = this.code;
-    data['name'] = this.name;
-    data['shortName'] = this.shortName;
-    data['size'] = this.size;
-    data['isEcommerge'] = this.isEcommerge;
-    data['productCategoryId'] = this.productCategoryId;
-    data['productCategory'] = this.productCategory;
-    data['productTypeId'] = this.productTypeId;
-    data['productType'] = this.productType;
-    data['productGroupId'] = this.productGroupId;
-    data['productGroup'] = this.productGroup;
-    data['clientId'] = this.clientId;
-    data['client'] = this.client;
-    data['uomId'] = this.uomId;
-    data['uom'] = this.uom;
-    data['controlExpireDate'] = this.controlExpireDate;
-    data['description'] = this.description;
-    data['unitPrice'] = this.unitPrice;
-    data['unitPriceCurrencyId'] = this.unitPriceCurrencyId;
-    data['unitPriceCurrency'] = this.unitPriceCurrency;
-    data['standardPack'] = this.standardPack;
-    data['standardPackUomId'] = this.standardPackUomId;
-    data['standardPackUom'] = this.standardPackUom;
-    data['picture'] = this.picture;
-    data['pictureContentType'] = this.pictureContentType;
-    data['mfg'] = this.mfg;
-    data['isActive'] = this.isActive;
-    data['createdOn'] = this.createdOn;
-    data['createdByUserId'] = this.createdByUserId;
-    data['createdByUser'] = this.createdByUser;
-    data['updatedOn'] = this.updatedOn;
-    data['updatedByUserId'] = this.updatedByUserId;
-    data['updatedByUser'] = this.updatedByUser;
-    return data;
+  factory ProductForListing.fromJson(Map<String, dynamic> item) {
+    return ProductForListing(
+      id: item['id'],
+      code: item['code'],
+      name: item['name'],
+      shortName: item['shortName'],
+      size: item['size'],
+      isEcommerge: item['isEcommerge'],
+      productCategoryId: item['productCategoryId'],
+      productCategory: item['productCategory'],
+      productTypeId: item['productTypeId'],
+      productType: item['productType'],
+      productGroupId: item['productGroupId'],
+      productGroup: item['productGroup'],
+      clientId: item['clientId'],
+      client: item['client'],
+      uomId: item['uomId'],
+      uom: item['uom'],
+      controlExpireDate: item['controlExpireDate'],
+      description: item['description'],
+      unitPrice: item['unitPrice'],
+      unitPriceCurrencyId: item['unitPriceCurrencyId'],
+      unitPriceCurrency: item['unitPriceCurrency'],
+      standardPack: item['standardPack'],
+      standardPackUomId: item['standardPackUomId'],
+      standardPackUom: item['standardPackUom'],
+      picture: item['picture'],
+      pictureContentType: item['pictureContentType'],
+      mfg: item['mfg'],
+      isActive: item['isActive'],
+      createdOn: DateTime.parse(item['createdOn']),
+      createdByUserId: item['createdByUserId'],
+      createdByUser: item['createdByUser'],
+      updatedOn: DateTime.parse(item['updatedOn']),
+      updatedByUserId: item['updatedByUserId'],
+      updatedByUser: item['updatedByUser'],
+    );
   }
 }
