@@ -5,7 +5,7 @@ import 'package:ui_design/views/purchase_list.dart';
 import 'package:ui_design/views/receive_list.dart';
 import 'package:ui_design/views/report_list.dart';
 import 'package:ui_design/views/sale_list.dart';
-
+import 'package:ui_design/views/store_list.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -377,11 +377,18 @@ class MainContent extends StatelessWidget {
                       child: new Text("สินค้าแนะนำ/โปรโมชั่น",
                           style: new TextStyle(fontSize: 18.0))),
                   new Expanded(
-                      child: new Text(
-                    "View All",
-                    style: new TextStyle(color: Color(0XFF2BD093)),
-                    textAlign: TextAlign.end,
-                  ))
+                      child: GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => StoreListPage()));
+                          },
+                          child: new Text(
+                            "View All",
+                            style: new TextStyle(color: Color(0XFF2BD093)),
+                            textAlign: TextAlign.end,
+                          )))
                 ],
               ),
               new SizedBox(
